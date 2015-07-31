@@ -7,4 +7,5 @@ class Product {
     BigDecimal price
     String countryCode
     String stockNumber
+    String schemeNumber
 }

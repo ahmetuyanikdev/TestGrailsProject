@@ -5,4 +5,5 @@ class Product {
     String productCode
     String inventoryNumber
     BigDecimal price
+    String countryCode
 }

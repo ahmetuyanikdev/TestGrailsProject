@@ -15,7 +15,7 @@ class Product {
     }
 
     void askForCity(){
-        println('ask for city')
+        println('ask for city and address')
     }
 }
 

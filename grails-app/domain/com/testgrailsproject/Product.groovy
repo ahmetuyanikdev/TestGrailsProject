@@ -13,6 +13,10 @@ class Product {
         println('say Hello')
 
     }
+
+    void askForCity(){
+
+    }
 }
 
 

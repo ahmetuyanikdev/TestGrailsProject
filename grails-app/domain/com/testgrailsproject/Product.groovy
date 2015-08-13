@@ -8,8 +8,10 @@ class Product {
     String countryCode
     String stockNumber
     String schemeNumber
+
+    void sayHello(){
+        println('say Hello')
+    }
 }
 
-void sayHello(){
-    println('say Hello')
-}
+

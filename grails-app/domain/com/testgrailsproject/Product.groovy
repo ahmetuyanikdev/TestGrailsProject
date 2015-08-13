@@ -19,6 +19,7 @@ class Product {
 
 
         println('ask for age again')
+        println('ask for sex')
     }
 }
 

@@ -9,3 +9,7 @@ class Product {
     String stockNumber
     String schemeNumber
 }
+
+void sayHello(){
+    println('say Hello')
+}

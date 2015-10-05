@@ -15,9 +15,8 @@ class MemberController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        //render Member.list(params) as JSON
-        respond Member.list(params), model:[memberCount: Member.count()]
-        //render Member.list(params) as XML
+        render Member.list(params) as JSON
+        //respond Member.list(params), model:[memberCount: Member.count()]
     }
 
     def show(Member member) {
@@ -43,14 +42,6 @@ class MemberController {
         }
 
         member.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'member.label', default: 'Member'), member.id])
-                redirect member
-            }
-            '*' { respond member, [status: CREATED] }
-        }
     }
 
     def edit(Member member) {
@@ -72,14 +63,6 @@ class MemberController {
         }
 
         member.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'member.label', default: 'Member'), member.id])
-                redirect member
-            }
-            '*'{ respond member, [status: OK] }
-        }
     }
 
     @Transactional
@@ -90,16 +73,7 @@ class MemberController {
             notFound()
             return
         }
-
         member.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'member.label', default: 'Member'), member.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
     }
 
     protected void notFound() {

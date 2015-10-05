@@ -18,6 +18,10 @@ class Test {
            println(s)
        }*/
 
+       String s = t.getHTML('http://www.kablostok.com/kabloekle.aspx')
+       println('--------//////-------')
+       println(s)
+
        Person p = t.createSample()
        t.printSample(p)
 
@@ -25,7 +29,7 @@ class Test {
        //String timeZone = 'Europe/Paris (+01:00)'
        String timeZone = 'Europe/Paris (-11:00)'
        int hourStartingIndex = getIndexOfSign(timeZone)
-       String s=timeZone.substring(hourStartingIndex,hourStartingIndex+3)
+       s=timeZone.substring(hourStartingIndex,hourStartingIndex+3)
        println(s)
        int parsed
 
